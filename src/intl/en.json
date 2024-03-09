@@ -1,0 +1,13 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About"
+  },
+  "home": {
+    "helloWorld": "Hello, World!"
+  },
+  "about": {
+    "title": "About Us",
+    "content": "This is the content of the about page."
+  }
+}

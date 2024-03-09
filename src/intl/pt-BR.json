@@ -1,0 +1,13 @@
+{
+  "navbar": {
+    "home": "Início",
+    "about": "Sobre"
+  },
+  "home": {
+    "helloWorld": "Olá, Mundo!"
+  },
+  "about": {
+    "title": "Sobre Nós",
+    "content": "Este é o conteúdo da página sobre."
+  }
+}
