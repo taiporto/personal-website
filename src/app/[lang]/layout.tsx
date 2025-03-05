@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -22,16 +23,16 @@ export default async function RootLayout({
   params,
   children,
 }: Readonly<{
-  params: Promise<{lang: string}>
+  params: Promise<{ lang: string }>;
   children: React.ReactNode;
 }>) {
-  const {lang} = await params;
+  const { lang } = await params;
   const translations = require(`../../dictionaries/${lang}.json`);
   return (
     <html lang={lang}>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Header translations={translations} />
-          <main>{children}</main>
+        <main>{children}</main>
         <footer>
           <p>© {new Date().getFullYear()} Tai Porto</p>
         </footer>

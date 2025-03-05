@@ -1,7 +1,9 @@
-`use client`;
+"use client";
 
 import { use } from "react";
 import { TranslationProvider } from "../_context/translation";
+import { ApolloProvider } from "@apollo/client";
+import { hashnodeClient } from "@/lib/apolloClient";
 
 export default function ClientLayout({
   params,
@@ -11,5 +13,9 @@ export default function ClientLayout({
   children: React.ReactNode;
 }) {
   const { lang } = use(params);
-  return <TranslationProvider lang={lang}>{children}</TranslationProvider>;
+  return (
+    <ApolloProvider client={hashnodeClient}>
+      <TranslationProvider lang={lang}>{children}</TranslationProvider>
+    </ApolloProvider>
+  );
 }
