@@ -1,8 +1,9 @@
 {
   "nav": {
-    "home": "Home",
     "about": "Sobre",
-    "contact": "Contato"
+    "blog": "Blog",
+    "contact": "Contato",
+    "home": "Home"
   },
   "test": {
     "hello": "Olá"

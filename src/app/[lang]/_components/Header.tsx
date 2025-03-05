@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Header({
   translations,
 }: Readonly<{
@@ -5,16 +7,19 @@ export default function Header({
 }>) {
   return (
     <header className="w-full">
-      <nav className="w-full flex align-between">
-        <ul>
+      <nav className="w-full">
+        <ul className="flex justify-around">
           <li>
-            <a href="/">{translations.nav.home}</a>
+            <Link href="/">{translations.nav.home}</Link>
           </li>
           <li>
-            <a href="/about">{translations.nav.about}</a>
+            <Link href="/about">{translations.nav.about}</Link>
+          </li>
+          <li>
+            <Link href="/blog">{translations.nav.blog}</Link>
           </li>
         </ul>
       </nav>
     </header>
   );
-};
+}

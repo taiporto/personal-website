@@ -5,8 +5,11 @@ import { NextRequest, NextResponse } from 'next/server'
 const locales = ['pt-BR', 'en-US'];
 
 function getLocale(request:NextRequest) {
-  console.log(request.headers)
-  let languages = new Negotiator({ headers: request.headers as any  }).languages()
+  let languages = new Negotiator({
+    headers: {
+      'accept-language': request.headers.get('accept-language')!,
+    },
+  }).languages()
   let defaultLocale = 'pt-BR'
    
   return match(languages, locales, defaultLocale);
@@ -19,7 +22,7 @@ export function middleware(request: NextRequest) {
   const pathnameHasLocale = locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   )
- 
+
   if (pathnameHasLocale) return
  
   // Redirect if there is no locale

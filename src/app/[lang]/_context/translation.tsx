@@ -16,20 +16,22 @@ export const TranslationProvider: React.FC<{ lang: string, children: ReactNode }
     let translation: string | Record<string, string> = translations;
 
     const accessKeys = key.split('.');
-    while(accessKeys.length > 0 && translation) {
-      if(typeof translation === 'string') break;
-      
-      if(typeof translation === 'object' && !translation?.[accessKeys[0]]) {
-        throw new Error('Invalid key');
+    while (accessKeys.length > 0 && translation) {
+      if (typeof translation === "string") break;
+
+      if (typeof translation === "object" && !translation?.[accessKeys[0]]) {
+        console.error("Invalid key");
+        return key;
       }
       translation = translation?.[accessKeys.shift() as string];
     }
 
-    if(typeof translation === 'object') {
-      throw new Error('Invalid key');
+    if (typeof translation === "object") {
+      console.error("Invalid key");
+      return key;
     }
 
-    return translation || key;
+    return translation;
   };
 
   return (
