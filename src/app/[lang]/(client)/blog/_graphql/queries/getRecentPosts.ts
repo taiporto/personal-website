@@ -1,4 +1,5 @@
 import { gql } from "@apollo/client";
+import { Post } from "../../_types";
 
 export type GetRecentPostsVariables = {
     host: string;
@@ -9,11 +10,7 @@ export type GetRecentPostsResult = {
         title: string;
         posts: {
             edges: {
-                node: {
-                    title: string;
-                    brief: string;
-                    url: string;
-                }
+                node: Post
             }[]
         }
     }
@@ -26,6 +23,7 @@ export const GET_RECENT_POSTS = gql`
         posts(first: 10) {
             edges {
                 node {
+                    id
                     title
                     brief
                     url
