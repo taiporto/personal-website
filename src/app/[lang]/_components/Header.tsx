@@ -6,17 +6,17 @@ export default function Header({
   translations: { [key: string]: any };
 }>) {
   return (
-    <header className="w-full">
-      <nav className="w-full">
-        <ul className="flex justify-around">
+    <header className="main-header w-full">
+      <nav className="w-full p-2 py-4 bg-purple-800 text-white font-extrabold uppercase">
+        <ul className="flex justify-center gap-12">
           <li>
-            <Link href="/">{translations.nav.home}</Link>
+            <Link className="hover:underline" href="/">{translations.nav.home}</Link>
           </li>
           <li>
-            <Link href="/about">{translations.nav.about}</Link>
+            <Link className="hover:underline" href="/about">{translations.nav.about}</Link>
           </li>
           <li>
-            <Link href="/blog">{translations.nav.blog}</Link>
+            <Link className="hover:underline" href="/blog">{translations.nav.blog}</Link>
           </li>
         </ul>
       </nav>

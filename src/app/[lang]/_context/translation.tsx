@@ -10,6 +10,7 @@ interface TranslationContextProps {
 const TranslationContext = createContext<TranslationContextProps | undefined>(undefined);
 
 export const TranslationProvider: React.FC<{ lang: string, children: ReactNode }> = ({lang, children }) => {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   const translations = require(`../../../dictionaries/${lang}.json`);
 
   const t = (key: string) => {

@@ -5,7 +5,8 @@
     "contact": "Contato",
     "home": "Home"
   },
-  "test": {
-    "hello": "Olá"
+  "home": {
+    "title": "Oi! Eu sou",
+    "description": "Sou um engenheiro de software com paixão por construir aplicações web. Tenho sólida experiência em React e TypeScript, e adoro aprender coisas novas."
   }
 }

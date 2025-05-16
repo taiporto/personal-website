@@ -5,7 +5,8 @@
     "contact": "Contact",
     "home": "Home"
   },
-  "test": {
-    "hello": "Hello"
+  "home": {
+    "title": "Hi! I'm",
+    "description": "I am a software engineer with a passion for building web applications. I have solid experience in React and TypeScript, and I love to learn new things."
   }
 }
