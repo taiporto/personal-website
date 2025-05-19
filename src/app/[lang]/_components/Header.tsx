@@ -10,13 +10,13 @@ export default function Header({
       <nav className="w-full p-2 py-4 bg-purple-800 text-white font-extrabold uppercase">
         <ul className="flex justify-center gap-12">
           <li>
-            <Link className="hover:underline" href="/">{translations.nav.home}</Link>
+            <Link className="hover:underline" href="/">{translations.nav._home}</Link>
           </li>
           <li>
-            <Link className="hover:underline" href="/about">{translations.nav.about}</Link>
+            <Link className="hover:underline" href="/about">{translations.nav._about}</Link>
           </li>
           <li>
-            <Link className="hover:underline" href="/blog">{translations.nav.blog}</Link>
+            <Link className="hover:underline" href="/blog">{translations.nav._blog}</Link>
           </li>
         </ul>
       </nav>

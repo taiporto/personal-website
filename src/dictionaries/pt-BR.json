@@ -1,12 +1,28 @@
 {
   "nav": {
-    "about": "Sobre",
-    "blog": "Blog",
-    "contact": "Contato",
-    "home": "Home"
+    "_about": "Sobre",
+    "_blog": "Blog",
+    "_contact": "Contato",
+    "_home": "Home"
   },
   "home": {
-    "title": "Oi! Eu sou",
-    "description": "Sou um engenheiro de software com paixão por construir aplicações web. Tenho sólida experiência em React e TypeScript, e adoro aprender coisas novas."
+    "_title": "Oi! Eu sou",
+    "_description": "Sou um engenheiro de software com paixão por construir aplicações web. Tenho sólida experiência em React e TypeScript, e adoro aprender coisas novas."
+  },
+  "projects": {
+    "_title": "Projetos",
+    "_description": "Aqui estão alguns dos meus projetos mais recentes. Sinta-se à vontade para explorá-los!",
+    "toolkit_ddj": {
+      "_title": "Caixa de Ferramentas do Jornalismo de Dados",
+      "_description": "Desenvolvida durante extensão acadêmica na Open Knowledge Brasil. É uma base colaborativa de mais de 145 ferramentas para trabalhar com dados."
+    },
+    "bandejaobot": {
+      "_title": "BandejãoBot UFRJ",
+      "_description": "Bot de Twitter e Bluesky que publica o cardápio dos RUs da UFRJ todos os dias às 9h."
+    },
+    "calculaeco": {
+      "_title": "CalculaECO",
+      "_description": "Ferramenta de cálculo de C.R para a Escola de Comunicação da UFRJ."
+    }
   }
 }
