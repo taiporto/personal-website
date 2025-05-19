@@ -2,6 +2,10 @@
 
 import { useTranslation } from "../_context/translation";
 import Image from "next/image";
+import { Projects } from "./_sections/Projects";
+import { Experience } from "./_sections/Experience";
+import { Education } from "./_sections/Education";
+import { Stack } from "./_sections/Stack";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -19,6 +23,10 @@ export default function Home() {
           </div>
         </div>
       </header>
+      <Projects />
+      <Experience />
+      <Education />
+      <Stack />
     </div>
   );
 }
