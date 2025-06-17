@@ -1,16 +1,16 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Mulish, Roboto_Slab } from "next/font/google";
 import "./globals.css";
 import Header from "@/app/[lang]/_components/Header";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const mulish = Mulish({
+  variable: "--font-mulish",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const robotoSlab = Roboto_Slab({
+  variable: "--font-roboto-slab",
   subsets: ["latin"],
 });
 
@@ -30,7 +30,7 @@ export default async function RootLayout({
   const translations = require(`../../dictionaries/${lang}.json`);
   return (
     <html lang={lang}>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${mulish.variable} ${robotoSlab.variable}`}>
         <Header translations={translations} />
         <main>{children}</main>
         <footer>
