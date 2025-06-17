@@ -22,7 +22,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
       <div className="flex items-end justify-between">
         <div className="max-w-3/4">
           <h3 className="text-xl font-bold">
-            <Link href={`/project/${project.id}`} className="hover:underline before:absolute before:w-full before:h-3/4 before:top-0 before:left-0" prefetch>
+            <Link href={`/project/${project.id}`} className="hover:underline before:z-0 before:absolute before:w-full before:h-3/4 before:top-0 before:left-0" prefetch>
               {project.title}
             </Link>
           </h3>

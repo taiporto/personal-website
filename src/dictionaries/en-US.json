@@ -8,21 +8,5 @@
   "home": {
     "_title": "Hi! I'm",
     "_description": "I am a software engineer with a passion for building excellent user experiences. I have solid experience in React and TypeScript, and I love to learn new things."
-  },
-  "projects": {
-    "_title": "Projects",
-    "_description": "Here are some of my most recent projects. Feel free to explore them!",
-    "toolkit_ddj": {
-      "_title": "Data Journalism Toolkit",
-      "_description": "Developed during an academic extension at Open Knowledge Brasil. It's a collaborative database of over 145 tools for working with data."
-    },
-    "bandejaobot": {
-      "_title": "BandejãoBot UFRJ",
-      "_description": "Twitter and Bluesky bot that posts the UFRJ cafeterias' menu every day at 9 a.m."
-    },
-    "calculaeco": {
-      "_title": "CalculaECO",
-      "_description": "GPA calculation tool for the School of Communication at UFRJ."
-    }
   }
 }

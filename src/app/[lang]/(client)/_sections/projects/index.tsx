@@ -1,10 +1,11 @@
 import { ProjectCard } from "@/app/[lang]/_components/ProjectCard";
 import { getProjects } from "../../_api/getProjects";
+import { Lang } from "@/app/types";
 
 export default async function Projects({
   locale
 }: {
-  locale: 'en-US' | 'pt-BR';
+    locale: Lang;
 }) {
   const projects = await getProjects(locale);
 

@@ -8,7 +8,7 @@ export const Header = () => {
   const {t} = useTranslation();
   return (
     <header>
-        <div className="flex items-center justify-between py-15">
+      <div className="flex items-center justify-between py-10">
           <div className="w-1/2 flex flex-col gap-5">
             <div className="flex flex-col gap-2">
               <span className="text-lg">{t("home._title")}</span>
