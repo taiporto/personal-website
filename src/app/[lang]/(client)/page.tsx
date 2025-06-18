@@ -1,13 +1,13 @@
 import Projects from "./_sections/projects";
 import { Experience } from "./_sections/Experience";
-import { Education } from "./_sections/Education";
 import { Stack } from "./_sections/Stack";
 import { Header } from "./_sections/header";
+import { Lang } from "@/app/types";
 
 export default async function Home({
   params,
 }: Readonly<{
-  params: { lang: string };
+  params: { lang: Lang };
 }>) {
   const { lang } = await params;
   return (
@@ -15,9 +15,8 @@ export default async function Home({
       <Header />
       <hr className="text-gray-300" />
       <Projects locale={lang} />
-      <Experience />
-      <Education />
       <Stack />
+      <Experience />
     </div>
   );
 }

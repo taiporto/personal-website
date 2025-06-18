@@ -13,6 +13,12 @@ export default function Header({
             <Link className="hover:underline" href="/">{translations.nav._home}</Link>
           </li>
           <li>
+            <Link className="hover:underline" href="#projects">{translations.nav._projects}</Link>
+          </li>
+          <li>
+            <Link className="hover:underline" href="#stack">Stack</Link>
+          </li>
+          <li>
             <Link className="hover:underline" href="/blog">{translations.nav._blog}</Link>
           </li>
         </ul>

@@ -11,7 +11,7 @@ export default async function Projects({
 
   return (
     <section className="py-10 flex flex-col gap-4">
-      <h2 className="text-4xl font-extrabold">Projects</h2>
+      <h2 id="projects" className="text-4xl font-extrabold">Projects</h2>
       <div className="grid grid-cols-3 gap-4 mt-4">
         {projects.map((project) => (
           <ProjectCard key={project.id} project={project} />

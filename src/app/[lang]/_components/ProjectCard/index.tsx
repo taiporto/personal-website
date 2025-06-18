@@ -7,7 +7,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
   return (
     <div
       key={project.id}
-      className="bg-white border-purple-800/50 border-solid border rounded-lg shadow-md flex flex-col gap-4 p-3 hover:shadow-lg transition-shadow duration-300 hover:border-purple-800 hover:cursor-pointer relative hover:underline"
+      className="bg-white border-purple-800/50 border-solid border rounded-lg shadow-md flex flex-col gap-4 px-3 pt-3 pb-4 hover:shadow-lg transition-shadow duration-300 hover:border-purple-800 hover:cursor-pointer relative hover:underline"
     >
       <div>
         <Image
@@ -19,7 +19,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
           loading="lazy"
         />
       </div>
-      <div className="flex items-end justify-between">
+      <div className="flex items-center justify-between">
         <div className="max-w-3/4">
           <h3 className="text-xl font-bold">
             <Link href={`/project/${project.id}`} className="hover:underline before:z-0 before:absolute before:w-full before:h-3/4 before:top-0 before:left-0" prefetch>
@@ -38,8 +38,8 @@ export const ProjectCard = ({ project }: { project: Project }) => {
               <a href={link.url} target="_blank" rel="noopener noreferrer">
                 <IconComponent
                   title={link.type === 'github' ? 'GitHub' : 'Website'}
-                  className="text-purple-700 hover:text-purple-300 transition-all"
-                  size={24}
+                    className="text-purple-700 hover:text-purple-500 transition-all"
+                    size={20}
                 />
               </a>
             </div>
