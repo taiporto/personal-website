@@ -21,7 +21,7 @@ export const RecentPostList = () => {
   if (error) return null;
 
   return (
-    <ul>
+    <ul className="flex flex-col gap-4">
       {recentPosts?.publication.posts.edges.map(({ node }) => (
         <PostItem key={node.url} postData={node} />
       ))}

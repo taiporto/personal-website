@@ -7,6 +7,9 @@ export type GetPostResult = {
     content: {
       html: string;
     };
+    ogMetaData: {
+      image: string;
+    };
   };
 };
 
@@ -20,6 +23,9 @@ export const GET_POST = gql`
       title
       content {
         html
+      }
+      ogMetaData {
+        image
       }
     }
   }

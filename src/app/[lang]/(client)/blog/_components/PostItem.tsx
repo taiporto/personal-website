@@ -7,8 +7,10 @@ export const PostItem = ({
   postData: Post
 }) => {
     return (
-      <li>
-        <Link href={`/blog/post/${postData.id}`}>{postData.title}</Link>
+      <li className="hover:bg-purple-100/40 p-4 rounded-lg transition-all relative">
+        <h2 className="text-xl font-medium mb-2">
+          <Link className="before:absolute before:top-0 before:left-0 before:h-30 before:w-full hover:underline" href={`/blog/post/${postData.id}`}>{postData.title}</Link>
+        </h2>
         <p>{postData.brief}</p>
       </li>
     )

@@ -23,7 +23,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
         {project.tags?.map((tag: Tag) => (
           <span
             key={tag.label}
-            className={`inline-block px-2 py-0.5 text-xs font-semibold rounded-full bg-purple-700 text-white`}
+            className={`inline-block px-2 py-0.5 text-xs font-semibold rounded-full bg-purple-950 text-white`}
           >
             {tag.label}
           </span>
