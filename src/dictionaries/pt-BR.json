@@ -4,10 +4,17 @@
     "_blog": "Blog",
     "_contact": "Contato",
     "_home": "Home",
-    "_projects": "Projetos"
+    "_projects": "Projetos",
+    "_experience": "Experiência"
   },
   "home": {
     "_title": "Oi! Me chamo",
-    "_description": "Sou um desenvolvedor front-end apaixonado por construir experiências de usuário imoecáveis. Tenho experiência sólida em React e TypeScript, e adoro aprender novas tecnologias."
+    "_description": "Sou um desenvolvedor front-end apaixonado por construir experiências de usuário impecáveis com React e TypeScript.",
+    "projects": {
+      "_title": "Projetos"
+    },
+    "experience": {
+      "_title": "Onde já trabalhei"
+    }
   }
 }

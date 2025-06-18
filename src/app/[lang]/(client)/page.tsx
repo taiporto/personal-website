@@ -1,5 +1,5 @@
 import Projects from "./_sections/projects";
-import { Experience } from "./_sections/Experience";
+import Experience from "./_sections/experience";
 import { Stack } from "./_sections/Stack";
 import { Header } from "./_sections/header";
 import { Lang } from "@/app/types";
@@ -16,7 +16,7 @@ export default async function Home({
       <hr className="text-gray-300" />
       <Projects locale={lang} />
       <Stack />
-      <Experience />
+      <Experience locale={lang} />
     </div>
   );
 }

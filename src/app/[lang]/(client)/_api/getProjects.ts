@@ -15,23 +15,22 @@ export const getProjects = async (locale: Lang): Promise<Project[]> => {
   return response.items.map(({ fields: project, sys: { id } }) => ({
     id,
     title: project.title[locale] || "",
-    description: documentToReactComponents(
-      project.description[locale] as unknown as Document
-    ),
+    description: project.description
+      ? documentToReactComponents(project.description[locale])
+      : "",
     coverImage:
       "https:" + project.coverImage["en-US"]!.fields.file["en-US"].url || "",
     tags: project.tags
       ? project.tags["en-US"]!.map((tag) => ({
           label: tag,
-          color: "gray",
+          color: "grey",
         }))
       : [],
     links:
       project.links && project.links !== null
-        ? (project.links["en-US"] as unknown as Link[]).map((link: Link) => ({
-            type: link.type as "github" | "website",
-            url: link.url || "",
-          }))
+        ? (project.links["en-US"] as unknown as Link[]).sort((a) =>
+            a.type === "github" ? -1 : 1
+          )
         : [],
   }));
 };

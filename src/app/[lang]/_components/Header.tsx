@@ -19,6 +19,9 @@ export default function Header({
             <Link className="hover:underline" href="#stack">Stack</Link>
           </li>
           <li>
+            <Link className="hover:underline" href="#experience">{translations.nav._experience}</Link>
+          </li>
+          <li>
             <Link className="hover:underline" href="/blog">{translations.nav._blog}</Link>
           </li>
         </ul>

@@ -24,14 +24,16 @@ export type Link = {
   url: string;
 }
 
+export type Tag = {
+  label: string;
+  color: string;
+};
+
 export type Project = {
   id: string;
   title: string;
   description?: ReactNode;
   coverImage: string;
-  tags: {
-    label: string;
-    color: string;
-  }[];
+  tags: Tag[];
   links: Link[];
-}
+};

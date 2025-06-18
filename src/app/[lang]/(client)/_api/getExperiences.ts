@@ -7,12 +7,10 @@ export const getExperiences = async (locale: Lang): Promise<any[]> => {
   });
 
   return response.items.map(({ fields: experience, sys: { id } }) => ({
-      id,
-      role: experience.role[locale] || "",
-      companyLogo: experience.companyLogo?.fields.file[locale]?.url || "",
-      company: 
-        experience.company[locale],
-      startDate: experience.startDate || "",
-      endDate: experience.endDate || "",
-    }));
+    id,
+    role: experience.role[locale] || "",
+    companyLogo:
+      "https:" + experience.companyLogo["en-US"].fields.file["en-US"].url,
+    companyName: experience.company[locale],
+  }));
 }  

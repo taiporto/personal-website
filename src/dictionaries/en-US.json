@@ -4,10 +4,17 @@
     "_blog": "Blog",
     "_contact": "Contact",
     "_home": "Home",
-    "_projects": "Projects"
+    "_projects": "Projects",
+    "_experience": "Experience"
   },
   "home": {
     "_title": "Hi there! I'm",
-    "_description": "I am a front-end software engineer with a passion for building excellent user experiences and solid experience in React and TypeScript."
+    "_description": "I am a front-end software engineer with a passion for building excellent user experiences with React and TypeScript.",
+    "projects": {
+      "_title": "Projects"
+    },
+    "experience": {
+      "_title": "Some companies I've worked with"
+    }
   }
 }

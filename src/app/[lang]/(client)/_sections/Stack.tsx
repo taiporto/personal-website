@@ -1,7 +1,9 @@
 export const Stack = () => {
   return (
-    <section className="w-full py-10">
-      <h2 id="stack" className="text-4xl font-extrabold">Stack</h2>
+    <section id="stack" className="w-full py-10">
+      <div className="bg-gradient-to-r from-purple-950 to-foreground bg-clip-text text-transparent">
+        <h2 className="text-4xl font-extrabold">Stack</h2>
+      </div>
       <p className="text-lg">Here are some of the technologies I work with</p>
       <div className="grid grid-cols-3 gap-4 mt-4">
         <div className="bg-gray-200 p-4 rounded-lg shadow-md">

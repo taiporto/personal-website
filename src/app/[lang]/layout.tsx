@@ -30,10 +30,10 @@ export default async function RootLayout({
   const translations = require(`../../dictionaries/${lang}.json`);
   return (
     <html lang={lang}>
-      <body className={`${mulish.variable} ${robotoSlab.variable} h-dvh`}>
+      <body className={`${mulish.variable} ${robotoSlab.variable} scroll-smooth h-dvh`}>
         <Header translations={translations} />
         <main>{children}</main>
-        <footer className="fixed bottom-0 w-full col-start-5">
+        <footer className="w-full col-start-1 col-end-4">
           <div className="flex justify-center items-end h-20">
             <p>© {new Date().getFullYear()} Tai Porto</p>
           </div>
