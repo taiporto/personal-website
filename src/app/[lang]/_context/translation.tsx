@@ -4,7 +4,7 @@ import React, { createContext, useContext, ReactNode } from 'react';
 
 interface TranslationContextProps {
   t: (key: string) => string;
-  translations: { [key: string]: any };
+  translations: { [key: string]: Record<string, string> | string };
 }
 
 const TranslationContext = createContext<TranslationContextProps | undefined>(undefined);
