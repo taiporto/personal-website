@@ -6,7 +6,7 @@ import { Lang } from "@/app/types";
 export default async function Home({
   params,
 }: Readonly<{
-  params: { lang: Lang };
+  params: Promise<{ lang: Lang }>;
 }>) {
   const { lang } = await params;
   return (
