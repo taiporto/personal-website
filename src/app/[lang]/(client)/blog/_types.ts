@@ -3,4 +3,8 @@ export type Post = {
   title: string;
   brief: string;
   url: string;
-}
+  slug: string;
+  coverImage?: {
+    url: string;
+  };
+};

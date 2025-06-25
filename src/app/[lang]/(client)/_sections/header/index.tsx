@@ -12,7 +12,7 @@ export const Header = () => {
         <div className="w-1/2 flex flex-col gap-5">
           <div className="flex flex-col gap-2">
             <span className="text-lg">{t("home._title")}</span>
-            <div className="bg-gradient-to-r from-purple-700 to-purple-950 bg-clip-text text-transparent">
+            <div className="bg-gradient-to-r from-purple-900 to-purple-800 bg-clip-text text-transparent">
               <h1 className="font-extrabold text-6xl">Tai Porto</h1>
             </div>
           </div>

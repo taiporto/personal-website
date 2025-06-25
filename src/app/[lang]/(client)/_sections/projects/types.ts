@@ -26,7 +26,6 @@ export type Link = {
 
 export type Tag = {
   label: string;
-  color: string;
 };
 
 export type Project = {

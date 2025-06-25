@@ -19,17 +19,21 @@ export type GetRecentPostsResult = {
 export const GET_RECENT_POSTS = gql`
   query GetRecentPosts($host: String!) {
     publication(host: $host) {
-        title
-        posts(first: 10) {
-            edges {
-                node {
-                    id
-                    title
-                    brief
-                    url
-                }
+      title
+      posts(first: 10) {
+        edges {
+          node {
+            id
+            title
+            brief
+            url
+            slug
+            coverImage {
+              url
             }
+          }
         }
+      }
     }
-}
-`
+  }
+`;

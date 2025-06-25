@@ -44,10 +44,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* header.main-header {
-  grid-column: 1 / 4;
-} */
-
 main {
   grid-column: 2;
 }

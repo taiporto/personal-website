@@ -7,7 +7,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
   return (
     <div
       key={project.id}
-      className="bg-white border-purple-800/30 border-solid border rounded-lg shadow-md flex flex-col gap-3 pb-3 hover:shadow-lg transition-all duration-300 hover:border-purple-800 hover:cursor-pointer relative"
+      className="bg-white border-purple-300/30 border-solid border rounded-lg shadow-md flex flex-col gap-3 pb-3 hover:shadow-lg transition-all duration-300 hover:border-purple-800/50 hover:cursor-pointer relative group"
     >
       <div>
         <Image
@@ -19,11 +19,11 @@ export const ProjectCard = ({ project }: { project: Project }) => {
           loading="lazy"
         />
       </div>
-      <div className="flex gap-1 px-3 pt-2">
+      <div className="flex gap-1 px-3 pt-1">
         {project.tags?.map((tag: Tag) => (
           <span
             key={tag.label}
-            className={`inline-block px-2 py-0.5 text-xs font-semibold rounded-full bg-purple-950 text-white`}
+            className={`inline-block px-2 py-0.5 text-[11px] font-semibold rounded-full bg-gray-500 text-white text-shadow-xs group-hover:bg-purple-800/90 transition-all`}
           >
             {tag.label}
           </span>
@@ -31,7 +31,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
       </div>
       <div className="flex gap-2 px-3 grow justify-between items-center">
         <div className="max-w-3/4">
-          <h3 className="text-xl font-bold truncate text-ellipsis" title={project.title}>
+          <h3 className="text-lg font-medium truncate text-ellipsis" title={project.title}>
             <Link href={`/project/${project.id}`} className="hover:underline before:z-0 before:absolute before:w-full before:h-5/6 before:top-0 before:left-0" prefetch>
               {project.title}
             </Link>

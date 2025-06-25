@@ -1,4 +1,3 @@
-import { ProjectCard } from "@/app/[lang]/_components/ProjectCard";
 import { getProjects } from "../../_api/getProjects";
 import { Lang } from "@/app/types";
 import { ProjectsClientComponent } from "./client";
