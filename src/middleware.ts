@@ -5,12 +5,12 @@ import { NextRequest, NextResponse } from 'next/server'
 const locales = ['pt-BR', 'en-US'];
 
 function getLocale(request:NextRequest) {
-  let languages = new Negotiator({
+  const languages = new Negotiator({
     headers: {
-      'accept-language': request.headers.get('accept-language')!,
+      "accept-language": request.headers.get("accept-language")!,
     },
-  }).languages()
-  let defaultLocale = 'pt-BR'
+  }).languages();
+  const defaultLocale = "pt-BR";
    
   return match(languages, locales, defaultLocale);
 }
