@@ -16,9 +16,11 @@ export const getProjects = async (locale: Lang): Promise<Project[]> => {
     id,
     title: project.title[locale] || "",
     description: project.description
-      ? documentToReactComponents(project.description[locale])
+      ? // @ts-expect-error contentful type is wrong
+        documentToReactComponents(project.description[locale])
       : "",
     coverImage:
+      // @ts-expect-error contentful type is wrong
       "https:" + project.coverImage["en-US"]!.fields.file["en-US"].url || "",
     tags: project.tags
       ? project.tags["en-US"]!.map((tag) => ({

@@ -15,12 +15,15 @@ export const getProjectById = async (
     id: response.sys.id,
     title: response.fields.title[locale] || "",
     description: response.fields.description
-      ? documentToReactComponents(response.fields.description[locale])
+      ? // @ts-expect-error contentful type is wrong
+        documentToReactComponents(response.fields.description[locale])
       : undefined,
     coverImage:
+      // @ts-expect-error contentful type is wrong
       "https:" + response.fields.coverImage["en-US"].fields.file["en-US"].url ||
       "",
     tags:
+      // @ts-expect-error contentful type is wrong
       response.fields.tags["en-US"].map((tag) => ({
         label: tag,
         color: "gray",

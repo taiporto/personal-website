@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 export default function Header({
   translations,
 }: Readonly<{
-  translations: { [key: string]: any };
+  translations: Record<string, Record<string, string>>;
 }>) {
   const pathname = usePathname();
   const isBlogPage = pathname.includes("/blog");
