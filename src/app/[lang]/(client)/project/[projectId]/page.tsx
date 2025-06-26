@@ -10,9 +10,27 @@ export default async function ProjectPage({
   const { projectId, lang } = await params;
   const project = await getProjectById(projectId, lang);
   return (
-    <div className="">
+    <div className="rounded-lg bg-white p-10 w-full">
       <header className="flex gap-4 justify-between items-center">
-        <h1 className="text-4xl font-extrabold grow">{project.title}</h1>
+        <div className="flex flex-col gap-4">
+          <h1 className="text-4xl font-extrabold grow">{project.title}</h1>
+          <p className="text-lg text-gray-600">{project.summary}</p>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.links.map((link) => {
+              return (
+                <a
+                  key={link.url}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex items-center px-4 py-2 text-sm font-medium text-white bg-purple-800 rounded-md hover:bg-purple-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2`}
+                >
+                  {link.type === "github" ? "GitHub" : "Website"}
+                </a>
+              )
+            })}
+          </div>
+        </div>
         <div>
           <Image
             src={project.coverImage}

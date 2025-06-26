@@ -18,6 +18,7 @@ export const getProjectById = async (
       ? // @ts-expect-error contentful type is wrong
         documentToReactComponents(response.fields.description[locale])
       : undefined,
+    summary: response.fields.summary ? response.fields.summary[locale] : "",
     coverImage:
       // @ts-expect-error contentful type is wrong
       "https:" + response.fields.coverImage["en-US"].fields.file["en-US"].url ||
