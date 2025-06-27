@@ -8,7 +8,7 @@ export const PostItem = ({
   postData: Post
 }) => {
     return (
-      <li className="hover:bg-purple-200/20 active:bg-purple-200/40 p-4 rounded-lg relative gap-3 flex">
+      <li className="bg-white md:bg-transparent md:hover:bg-purple-200/20 active:bg-purple-200/40 p-4 rounded-lg relative gap-3 flex flex-col md:flex-row">
         {postData.coverImage && (
           <Image
             src={postData.coverImage?.url}
@@ -25,7 +25,7 @@ export const PostItem = ({
               <Link className="before:absolute before:top-0 before:left-0 before:h-30 before:w-full transition-all" href={`https://taiporto.hashnode.dev/${postData.slug}`}>{postData.title}</Link>
             </h2>
           </div>
-          <p>{postData.brief}</p>
+          <p className="line-clamp-2 md:line-clamp-3">{postData.brief}</p>
         </div>
       </li>
     )

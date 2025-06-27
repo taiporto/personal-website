@@ -10,7 +10,7 @@ export const Header = () => {
   return (
     <header>
       <div className="flex items-center justify-between py-10">
-        <motion.div className="w-1/2 flex flex-col gap-5">
+        <motion.div className="md:w-1/2 flex flex-col gap-5">
           <div className="flex flex-col gap-2">
             <span className="text-md text-gray-800">{t("home._title")}</span>
             <div className="bg-gradient-to-r from-purple-900 to-purple-800 bg-clip-text text-transparent">
@@ -24,7 +24,7 @@ export const Header = () => {
           </div>
           <p className="text-lg">{t('home._description')}</p>
         </motion.div>
-        <div>
+        <div className="hidden md:block">
           <Image src={me} alt="" width={280} height={300} />
         </div>
       </div>
