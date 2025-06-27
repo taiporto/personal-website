@@ -10,11 +10,12 @@ export default function Header({
 }>) {
   const pathname = usePathname();
   const isBlogPage = pathname.includes("/blog");
+  const isProjectPage = pathname.includes("/project");
 
   return (
     <header className="main-header col-start-1 col-end-4 flex items-center justify-center h-[66px]">
       <nav className="w-4/6 mx-auto px-2 py-5 rounded-xl text-foreground fixed top-4 font-extrabold uppercase backdrop-blur-[4px] backdrop-saturate-[100%] bg-purple-100/40 border border-[#813d9c]/5 drop-shadow-sm z-50">
-        {isBlogPage ? (
+        {isBlogPage || isProjectPage ? (
           <ul className="flex justify-center gap-12 text-gray-800">
             <li>
               <Link className="hover:text-purple-800 transition-all" href="/">{translations.nav._home}</Link>

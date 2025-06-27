@@ -9,7 +9,7 @@ export default async function Experience({
 }) {
   const experiences = await getExperiences(locale);
   return (
-    <section id="experience" className="w-full py-10 flex flex-col gap-4">
+    <section id="experience" className="py-10 flex flex-col gap-4">
       <ExperienceClientComponent experiences={experiences} />
     </section>
   );

@@ -10,7 +10,9 @@ export default async function ProjectPage({
   const { projectId, lang } = await params;
   const project = await getProjectById(projectId, lang);
   return (
-    <div className="rounded-lg bg-white p-10 w-full">
+    <div
+      className="rounded-lg bg-white p-10 w-full"
+    >
       <header className="flex gap-4 justify-between items-center">
         <div className="flex flex-col gap-4">
           <h1 className="text-4xl font-extrabold grow">{project.title}</h1>

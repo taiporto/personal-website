@@ -9,7 +9,7 @@ export const ProjectsClientComponent = ({
 }: {
   projects: Project[];
 }) => {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
   return (
     <>
       <div className="bg-gradient-to-r from-purple-900 to-purple-800 bg-clip-text text-transparent">

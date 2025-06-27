@@ -13,8 +13,8 @@ export const ExperienceClientComponent = ({
   return (
     <>
       <div className="bg-gradient-to-r from-purple-900 to-purple-800 bg-clip-text text-transparent">
-      <h2 className="text-4xl font-extrabold">{t('home.experience._title')}</h2>
-    </div>
+        <h2 className="text-4xl font-extrabold">{t('home.experience._title')}</h2>
+      </div>
       <div className="grid grid-cols-4 px-20">
         {experiences.map((experience: Experience) => (
           <div key={experience.id} className="max-w-40 flex items-center justify-center p-4 rounded-lg mt-4 saturate-0 grayscale">

@@ -2,20 +2,28 @@ import { LuGithub, LuGlobe } from "react-icons/lu";
 import Image from "next/image";
 import Link from "next/link";
 import { Project, Tag } from "../../(client)/_sections/projects/types";
+import { motion } from "motion/react";
 
 export const ProjectCard = ({ project }: { project: Project }) => {
   return (
-    <div
+    <motion.div
+      whileHover={{
+        rotate: 1,
+      }}
+      transition={{
+        duration: 0.05,
+      }}
+      layout
       key={project.id}
-      className="bg-white border-purple-300/30 border-solid border rounded-lg shadow-md flex flex-col gap-3 pb-3 hover:shadow-lg transition-all duration-300 hover:border-purple-800/50 hover:cursor-pointer relative group"
+      className="bg-white p-2 border-purple-300/30 border-solid border rounded-lg shadow-md flex flex-col gap-3 pb-3 hover:shadow-lg transition-all duration-300 hover:border-purple-800/50 hover:border-[1.5px] hover:cursor-pointer relative group"
     >
       <div>
         <Image
           src={project.coverImage}
-          alt={project.title}
+          alt=""
           width={465}
           height={192}
-          className="w-full h-38 border-b border-gray-200 object-cover rounded-t-lg"
+          className="w-full h-38 border border-gray-200 object-cover rounded-lg"
           loading="lazy"
         />
       </div>
@@ -23,7 +31,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
         {project.tags?.map((tag: Tag) => (
           <span
             key={tag.label}
-            className={`inline-block px-2 py-0.5 text-[11px] font-semibold rounded-full bg-gray-500 text-white text-shadow-xs group-hover:bg-purple-800/90 transition-all`}
+            className={`inline-block px-2 py-0.5 text-[12px] font-semibold rounded-full bg-gray-500 text-white text-shadow-xs group-hover:bg-purple-800/90 transition-all`}
           >
             {tag.label}
           </span>
@@ -48,7 +56,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
                 <a href={link.url} target="_blank" rel="noopener noreferrer">
                   <IconComponent
                     title={link.type === 'github' ? 'GitHub' : 'Website'}
-                    className="text-purple-700 hover:text-purple-500 transition-all"
+                    className="text-purple-700 hover:text-purple-400 transition-all"
                     size={20}
                   />
                 </a>
@@ -58,6 +66,6 @@ export const ProjectCard = ({ project }: { project: Project }) => {
         </div>
       </div>
 
-    </div>
+    </motion.div>
   );
 };
