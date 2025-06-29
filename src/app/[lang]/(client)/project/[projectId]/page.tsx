@@ -11,12 +11,12 @@ export default async function ProjectPage({
   const project = await getProjectById(projectId, lang);
   return (
     <div
-      className="rounded-lg bg-white p-10 w-full"
+      className="rounded-lg bg-white p-5 md:p-10 w-full"
     >
-      <header className="flex gap-4 justify-between items-center">
+      <header className="flex flex-col md:flex-row gap-4 justify-between items-center">
         <div className="flex flex-col gap-4">
           <h1 className="text-4xl font-extrabold grow">{project.title}</h1>
-          <p className="text-lg text-gray-600">{project.summary}</p>
+          <p className="text-md md:text-lg text-gray-500">{project.summary}</p>
           <div className="flex flex-wrap gap-2 mb-4">
             {project.links.map((link) => {
               return (
@@ -45,7 +45,7 @@ export default async function ProjectPage({
         </div>
       </header>
       <main className="pt-10">
-        <p className="text-lg">{project.description}</p>
+        <p className="text-md md:text-lg">{project.description}</p>
       </main>
     </div>
   );

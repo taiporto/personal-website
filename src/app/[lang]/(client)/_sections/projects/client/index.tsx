@@ -3,6 +3,7 @@
 import { useTranslation } from "@/app/[lang]/_context/translation"
 import { Project } from "../types";
 import { ProjectCard } from "@/app/[lang]/_components/ProjectCard";
+import { Title } from "@/app/[lang]/_components/Title";
 
 export const ProjectsClientComponent = ({
   projects
@@ -12,9 +13,9 @@ export const ProjectsClientComponent = ({
   const { t } = useTranslation();
   return (
     <>
-      <div className="bg-gradient-to-r from-purple-900 to-purple-800 bg-clip-text text-transparent">
-      <h2 className="text-4xl font-extrabold">{t('home.projects._title')}</h2>
-    </div>
+      <Title size="4xl" Tag="h2">
+        {t('home.projects._title')}
+      </Title>
       <div className="flex flex-col md:grid md:grid-cols-3 gap-6 mt-4">
         {projects.map((project) => (
           <ProjectCard key={project.id} project={project} />

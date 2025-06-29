@@ -25,7 +25,7 @@ h1, h2, h3, h4, h5, h6 {
 
 body {
   display: grid;
-  grid-template-columns: 1fr min(120ch, 80%) 1fr;
+  grid-template-columns: 1fr min(120ch, 85%) 1fr;
   grid-template-rows: 1fr 3fr 1fr;
   color: var(--foreground);
   background: radial-gradient(ellipse at top left, #eac7fe, #fdf5ff, #fdf5ff, #fdf5ff, #fdf5ff, #fdf5ff, #eac7fe);
@@ -36,10 +36,4 @@ body {
 
 main {
   grid-column: 2;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 }
