@@ -20,11 +20,37 @@ export const Navigation = ({
   const isNotHomePage = isBlogPage || isProjectPage;
 
   const { width } = useWindowSize();
-  const isMobile = (width || 768) < 768;
+  const isMobile = width && width < 768;
 
-  const [isMenuExpanded, setIsMenuExpanded] = useState(!isMobile);
+  const [isMenuExpanded, setIsMenuExpanded] = useState(false);
 
   const handleToggleMenu = () => setIsMenuExpanded(!isMenuExpanded);
+
+  const homePageItems = [
+    {
+      label: translations.nav._projects,
+      href: "/#projects"
+    },
+    {
+      label: translations.nav._experience,
+      href: "/#experience"
+    },
+    {
+      label: translations.nav._blog,
+      href: "/blog"
+    },
+  ]
+
+  const nonHomePageItems = [
+    {
+      label: translations.nav._home,
+      href: "/"
+    },
+    {
+      label: translations.nav._blog,
+      href: "/blog"
+    },
+  ]
 
   return (
     <>
@@ -39,42 +65,51 @@ export const Navigation = ({
           />
         </Link>
       )}
-      <AnimatePresence>
-        <motion.nav layout transition={{ type: 'tween', ease: 'easeOut', duration: 0.2 }} className="fixed flex flex-col gap-6 items-end md:items-center justify-center right-5 md:right-auto md:w-4/6 mx-auto p-3 md:px-2 md:py-5 rounded-xl text-foreground top-4 font-extrabold uppercase backdrop-blur-[8px] md:backdrop-blur-[4px] backdrop-saturate-[100%] bg-purple-100/40 border border-[#813d9c]/5 drop-shadow-sm z-50">
-          {isMobile &&
+      {isMobile ? (
+        <AnimatePresence>
+          <motion.nav layout transition={{ type: 'tween', ease: 'easeOut', duration: 0.2 }} className="fixed flex flex-col gap-6 items-end justify-center right-5 mx-auto p-3 rounded-xl text-foreground top-4 font-extrabold uppercase backdrop-blur-[8px] backdrop-saturate-[100%] bg-purple-100/40 border border-[#813d9c]/5 drop-shadow-sm z-50">
             <button className="cursor-pointer" onClick={handleToggleMenu}>
               {isMenuExpanded ? <LuX size={24} /> : <LuMenu size={24} />}
             </button>
-          }
-          <AnimatePresence>
-            {isMenuExpanded && (
-              isNotHomePage ? (
-                <motion.ul layout exit={{ x: 10, opacity: 0 }} className="flex flex-col text-right md:text-center md:flex-row justify-center gap-5 px-2 md:gap-12 text-gray-800">
-                  <li>
-                    <Link className="hover:text-purple-800 transition-all" href="/">{translations.nav._home}</Link>
-                  </li>
-                  <li>
-                    <Link className="hover:text-purple-800 transition-all" href="/blog">{translations.nav._blog}</Link>
-                  </li>
-                </motion.ul>
-              ) : (
-                  <motion.ul layout exit={{ x: 10, opacity: 0 }} className="flex flex-col text-right md:text-center md:flex-row justify-center gap-5 px-2 md:gap-12 text-gray-800">
-                    <li>
-                      <Link className="hover:text-purple-800 transition-all" href="/#projects">{translations.nav._projects}</Link>
+            <AnimatePresence>
+              {isMenuExpanded && (
+                  <motion.ul layout exit={{ x: 10, opacity: 0 }} className="flex flex-col text-right justify-center gap-5 px-2 text-gray-800">
+                  {isNotHomePage ? nonHomePageItems.map((item) => (
+                    <li key={item.href}>
+                      <Link className="hover:text-purple-800 transition-all" href={item.href}>{item.label}</Link>
                     </li>
-                    <li>
-                      <Link className="hover:text-purple-800 transition-all" href="/#experience">{translations.nav._experience}</Link>
+                  )) : homePageItems.map((item) => (
+                    <li key={item.href}>
+                      <Link className="hover:text-purple-800 transition-all" href={item.href}>{item.label}</Link>
                     </li>
-                    <li>
-                      <Link className="hover:text-purple-800 transition-all" href="/blog">{translations.nav._blog}</Link>
-                    </li>
+                  ))}
                 </motion.ul>
               )
+              }
+            </AnimatePresence>
+          </motion.nav >
+        </AnimatePresence >
+
+      ) : (
+        <nav className="fixed flex flex-col gap-6 items-center justify-center w-4/6 mx-auto px-2 py-5 rounded-xl text-foreground top-4 font-extrabold uppercase backdrop-blur-[4px] backdrop-saturate-[100%] bg-purple-100/40 border border-[#813d9c]/5 drop-shadow-sm z-50">
+          {
+            (
+              <ul className="flex text-center justify-center px-2 gap-12 text-gray-800">
+               {isNotHomePage ? nonHomePageItems.map((item) => (
+                    <li key={item.href}>
+                      <Link className="hover:text-purple-800 transition-all" href={item.href}>{item.label}</Link>
+                    </li>
+                  )) : homePageItems.map((item) => (
+                    <li key={item.href}>
+                      <Link className="hover:text-purple-800 transition-all" href={item.href}>{item.label}</Link>
+                    </li>
+                  ))}
+              </ul>
             )
-            }
-          </AnimatePresence>
-        </motion.nav >
-      </AnimatePresence >
+
+          }
+        </nav>
+      )}
     </>
   )
 }
