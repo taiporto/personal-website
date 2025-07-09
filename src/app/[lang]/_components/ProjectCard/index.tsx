@@ -27,7 +27,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
           loading="lazy"
         />
       </div>
-      <div className="flex gap-1 px-3 pt-1">
+      <div className="flex gap-1 px-3 pt-1 flex-wrap">
         {project.tags?.map((tag: Tag) => (
           <span
             key={tag.label}
